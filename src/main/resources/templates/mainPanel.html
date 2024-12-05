@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/main.css}" />
+    <title>Tickengine</title>
+</head>
+
+<body>
+    <h1>API Tickengine</h1>
+    <p class="notion">
+        👨‍🚀These are just some HTML views for development use only. If you can see them, please let us know.
+    </p>
+
+    <h2>Description</h2>
+    <p>This API will help you manage all aspects of a mid-sized cinema, including sales, ticketing, employee management,
+        and screening scheduling.</p>
+    <h2>Entities</h2>
+    <p>For more information on utilities, please navigate to the following links:</p>
+    <ul>
+        <li><code><a th:href="@{/ticketsapi/cinema}">[cinema]</a></code>: Contains information about each cinema center.
+            Every cinema contains the rest relavant information.</li>
+        <li><code><a th:href="@{/ticketsapi/user}">[user]</a></code>: Users in the system (sales, managers, it_adm),
+            associated with a specific cinema.</li>
+        <li><code><a th:href="@{/ticketsapi/screen}">[screen]</a></code>: Each cinema contains many screens (movie
+            theaters). <ul>
+                <li><code><a th:href="@{/ticketsapi/seat}">[seat]</a></code>: Every movie theater contains individual
+                    seats.</li>
+            </ul>
+        </li>
+        <li><code><a th:href="@{/ticketsapi/screening}">[screening]</a></code>: Films that will be shown in the cinema.
+            <ul>
+                <li><code><a th:href="@{/ticketsapi/show}">[show]</a></code>: Individual screening programming
+                    associated to a screen.</li>
+                <li><code><a th:href="@{/ticketsapi/movie}">[movie]</a></code>: All the information about the movie.
+                </li>
+            </ul>
+        </li>
+        <li><code><a th:href="@{/ticketsapi/sale}">[sale]</a></code>: Each sale will include tickets associated with a
+            screening or film showing: <ul>
+                <li><code><a th:href="@{/ticketsapi/ticket}">[ticket]</a></code>: Contains all the necessary information
+                    about the show, including seat, schedule, screen.</li>
+            </ul>
+        </li>
+    </ul>
+    <!-- <pre>
+        {
+            "id": 1,
+            "user": "Agustin"
+        }</pre>
+
+    <code>
+        codigo
+    </code>
+    <code>
+        [refLink]
+    </code> -->
+
+    <footer>
+        <a href="https://github.com/velozo-ag" target="_blank">
+            github.com/velozo-ag
+        </a> ~ @velozo.ag04
+    </footer>
+</body>
+
+</html>
