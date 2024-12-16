@@ -1,5 +1,7 @@
 package com.tickengine.model;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import com.tickengine.enums.Profile;
 
 import jakarta.persistence.*;
@@ -13,14 +15,21 @@ public class UserModel {
     @Column(unique = true, nullable = false)
     private Integer id;
 
+    @Column(nullable = false)
     private String name;
+    @Column(nullable = false)
     private String surname;
+    @Column(nullable = false)
     private String password;
     @Column(unique = true, nullable = false)
-    private String email;   
+    private String email;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private Profile profile;
+
+    @Column(nullable = false)
+    @ColumnDefault("1")
     private Integer status;
 
     public Integer getId() {

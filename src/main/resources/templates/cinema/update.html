@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/main.css}" />
+    <title>Tickengine - Cinema</title>
+</head>
+<body>
+    <h1>Cinema 🎥</h1>
+
+    
+    <ul class="link-menu">
+        <li>
+            <a th:href="@{/tickengine/cinema}" class="link">
+                << cinema-panel</a>
+        </li>
+    </ul>
+
+    <p th:if="${error} != null" class="notion alert" th:text="${error}"></p>
+
+    <h2>Update</h2>
+
+    <form action="#" th:action="@{'/tickengine/cinema/update/' + ${cinema.id}}" th:object="${cinema}" method="post">
+        <label for="id">Id:</label>
+        <input type="text" id="id" th:field="*{id}" disabled>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}">
+        <label for="name">Location:</label>
+        <input type="text" th:field="*{location}">
+        <label for="name">Email:</label>
+        <input type="email" th:field="*{email}">
+        <input type="submit" value="update">
+    </form>
+
+    
+</body>
+</html>

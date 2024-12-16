@@ -3,8 +3,10 @@ package com.tickengine.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -13,41 +15,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tickengine.model.CinemaModel;
-import com.tickengine.model.UserModel;
 import com.tickengine.service.CinemaService;
-import com.tickengine.service.UserService;
 
 @RestController
-@RequestMapping("/tickengine/api/user")
-public class UserController {
+@RequestMapping("/tickengine/api/cinema")
+public class CinemaController {
 
     @Autowired
-    UserService userService;
+    CinemaService cinemaService;
 
     @GetMapping()
-    public List<UserModel> listAll() {
-        return userService.findAll();
+    public List<CinemaModel> listAll() {
+        return cinemaService.findAll();
     }
 
     @GetMapping("/{id}")
-    public UserModel findUser(@PathVariable Integer id) {
-        return userService.findById(id);
+    public CinemaModel findCinema(@PathVariable Integer id) {
+        return cinemaService.findById(id);
     }
 
     @PostMapping()
-    public UserModel createUser(@RequestBody UserModel user) {
-        return userService.create(user);
+    public CinemaModel createCinema(@RequestBody CinemaModel cinema) {
+        return cinemaService.create(cinema);
     }
 
     @PutMapping("/{id}")
-    public UserModel updateUser(@RequestBody UserModel user, @PathVariable Integer id) {
-        user.setId(id);
-        return userService.update(user);
+    public CinemaModel updateCinema(@RequestBody CinemaModel cinema, @PathVariable Integer id) {
+        cinema.setId(id);
+        return cinemaService.update(cinema);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteUser(@PathVariable Integer id) {
-        userService.deleteById(id);
+    public void deleteCinema(@PathVariable Integer id) {
+        cinemaService.deleteById(id);
     }
-
 }

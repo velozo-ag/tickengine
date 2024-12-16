@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/main.css}" />
+    <title>Tickengine - User</title>
+</head>
+
+<body>
+    <h1>User 👤</h1>
+
+    <ul class="link-menu">
+        <li>
+            <a th:href="@{/tickengine/}" class="link">
+                << menu</a>
+        </li>
+        <li>
+            <a th:href="@{user/create}" class="link">
+                new user</a>
+        </li>
+    </ul>
+
+    <h2>Description</h2>
+    <p>Users in the system (sales, managers, it_adm), associated with a respectively cinema.</p>
+
+    <table th:if="${users.size()} > 0">
+        <colgroup>
+            <col style="width: 5%;">
+            <col style="width: 20%;">
+            <col style="width: 35%;">
+            <col style="width: 30%;">
+            <col style="width: 5%;">
+            <col style="width: 5%;">
+        </colgroup>
+        <thead>
+            <th>id</th>
+            <th>name</th>
+            <th>location</th>
+            <th>email</th>
+            <th>-</th>
+            <th>-</th>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <!-- <td th:text="${cinema.id}"></td>
+                <td th:text="${cinema.name}"></td>
+                <td th:text="${cinema.location}"></td>
+                <td th:text="${cinema.email}"></td>
+                <td><a th:href="@{'/tickengine/cinema/update/' + ${cinema.id}}" style="color: #3c7be7a9;">edit</a></td>
+                <td>
+                    <a href="#" th:attr="data-cinema-name=${cinema.name}"
+                        th:onclick="|event.preventDefault(); if(confirm('Are you sure you want to delete ' + this.getAttribute('data-cinema-name') + '?')) document.getElementById('delete${cinema.id}').submit();|"
+                        style="color: #e74c3c;">
+                        delete
+                    </a>
+
+                    <form th:id="'delete' + ${cinema.id}" th:action="@{/tickengine/cinema/delete/{id}(id=${cinema.id})}"
+                        method="post" style="display: none;">
+                    </form>
+                </td> -->
+            </tr>
+        </tbody>
+    </table>
+
+    <p th:if="${users.size()} == 0" class="notion">There are not users registered.</p>
+
+</body>
+
+</html>

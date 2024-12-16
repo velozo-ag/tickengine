@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <h1>API Tickengine</h1>
+    <h1>API Tickengine 🧷</h1>
     <p class="notion">
-        👨‍🚀These are just some HTML views for development use only. If you can see them, please let us know.
+        🚩👨‍🚀These are just some HTML views for development use only. If you can see them, please let us know.
     </p>
 
     <h2>Description</h2>
@@ -20,27 +20,27 @@
     <h2>Entities</h2>
     <p>For more information on utilities, please navigate to the following links:</p>
     <ul>
-        <li><code><a th:href="@{/ticketsapi/cinema}">[cinema]</a></code>: Contains information about each cinema center.
+        <li><code><a th:href="@{/tickengine/cinema}">[cinema]</a></code>: Contains information about each cinema center.
             Every cinema contains the rest relavant information.</li>
-        <li><code><a th:href="@{/ticketsapi/user}">[user]</a></code>: Users in the system (sales, managers, it_adm),
+        <li><code><a th:href="@{/tickengine/user}">[user]</a></code>: Users in the system (sales, managers, it_adm),
             associated with a specific cinema.</li>
-        <li><code><a th:href="@{/ticketsapi/screen}">[screen]</a></code>: Each cinema contains many screens (movie
+        <li><code><a th:href="@{/tickengine/screen}">[screen]</a></code>: Each cinema contains many screens (movie
             theaters). <ul>
-                <li><code><a th:href="@{/ticketsapi/seat}">[seat]</a></code>: Every movie theater contains individual
+                <li><code><a th:href="@{/tickengine/seat}">[seat]</a></code>: Every movie theater contains individual
                     seats.</li>
             </ul>
         </li>
-        <li><code><a th:href="@{/ticketsapi/screening}">[screening]</a></code>: Films that will be shown in the cinema.
+        <li><code><a th:href="@{/tickengine/screening}">[screening]</a></code>: Films that will be shown in the cinema.
             <ul>
-                <li><code><a th:href="@{/ticketsapi/show}">[show]</a></code>: Individual screening programming
+                <li><code><a th:href="@{/tickengine/show}">[show]</a></code>: Individual screening programming
                     associated to a screen.</li>
-                <li><code><a th:href="@{/ticketsapi/movie}">[movie]</a></code>: All the information about the movie.
+                <li><code><a th:href="@{/tickengine/movie}">[movie]</a></code>: All the information about the movie.
                 </li>
             </ul>
         </li>
-        <li><code><a th:href="@{/ticketsapi/sale}">[sale]</a></code>: Each sale will include tickets associated with a
+        <li><code><a th:href="@{/tickengine/sale}">[sale]</a></code>: Each sale will include tickets associated with a
             screening or film showing: <ul>
-                <li><code><a th:href="@{/ticketsapi/ticket}">[ticket]</a></code>: Contains all the necessary information
+                <li><code><a th:href="@{/tickengine/ticket}">[ticket]</a></code>: Contains all the necessary information
                     about the show, including seat, schedule, screen.</li>
             </ul>
         </li>
